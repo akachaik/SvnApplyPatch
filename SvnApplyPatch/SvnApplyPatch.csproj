@@ -78,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="diff.txt" />
+    <Content Include="file1.txt" />
+    <Content Include="file2.txt" />
+    <Content Include="patch.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,26 @@
+﻿@@ -1 +0,0 @@
+-This file will be deleted.
+Index: changed-file
+===================================================================
+--- changed-file	(revision 4)
++++ changed-file	(working copy)
+@@ -1,6 +1,6 @@
+ The letters in a line of text
+ Could make your day much better.
+ But expanded into paragraphs,
+-I'd tell of kangaroos and calves
++I'd tell of monkeys and giraffes
+ Until you were all smiles and laughs
+ From my letter made of letters.
+
+Property changes on: changed-file
+___________________________________________________________________
+Added: propname
+## -0,0 +1 ##
++propvalue
+Index: added-file
+===================================================================
+--- added-file	(revision 0)
++++ added-file	(working copy)
+@@ -0,0 +1 @@
++This is an added file.

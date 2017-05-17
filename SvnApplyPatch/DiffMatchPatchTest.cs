@@ -30,6 +30,56 @@ namespace nicTest
     [TestFixture()]
     public class diff_match_patchTest : diff_match_patch
     {
+        [Test]
+        public void PatchToText()
+        {
+            var file1 = System.IO.File.ReadAllText(
+                @"C:\Users\AkachaiPC\Documents\Visual Studio 2017\Projects\SvnApplyPatch\SvnApplyPatch\file1.txt");
+            var file2 = System.IO.File.ReadAllText(
+                @"C:\Users\AkachaiPC\Documents\Visual Studio 2017\Projects\SvnApplyPatch\SvnApplyPatch\file2.txt");
+            var dmp = new diff_match_patchTest();
+
+            var diffs = dmp.diff_main(file1, file2);
+
+            var sourceText = dmp.diff_text1(diffs);
+            var targetText = dmp.diff_text2(diffs);
+            var patchs = dmp.patch_make(diffs);
+            var patchText = dmp.patch_toText(patchs);
+
+        }
+
+        [Test]
+        public void PatchToText_Without_Diffs()
+        {
+            var file1 = System.IO.File.ReadAllText(
+                @"C:\Users\AkachaiPC\Documents\Visual Studio 2017\Projects\SvnApplyPatch\SvnApplyPatch\file1.txt");
+            var file2 = System.IO.File.ReadAllText(
+                @"C:\Users\AkachaiPC\Documents\Visual Studio 2017\Projects\SvnApplyPatch\SvnApplyPatch\file2.txt");
+            var dmp = new diff_match_patchTest();
+
+            var patchs = dmp.patch_make(file1, file2);
+            var patchText = dmp.patch_toText(patchs);
+
+        }
+
+        [Test]
+        public void PathcApply()
+        {
+            var dmp = new diff_match_patchTest();
+
+            var patchContent = System.IO.File.ReadAllText(@"C:\Users\AkachaiPC\Documents\Visual Studio 2017\Projects\SvnApplyPatch\SvnApplyPatch\patch.txt");
+            var file1 = System.IO.File.ReadAllText(
+                @"C:\Users\AkachaiPC\Documents\Visual Studio 2017\Projects\SvnApplyPatch\SvnApplyPatch\file1.txt");
+
+            var patchs = dmp.patch_fromText(patchContent);
+            var result = dmp.patch_apply(patchs, file1);
+
+            var resultText = result[0].ToString();
+
+        }
+
+
+
         [Test()]
         public void diff_commonPrefixTest()
         {
