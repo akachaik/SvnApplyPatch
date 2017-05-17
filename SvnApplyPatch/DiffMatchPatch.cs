@@ -2571,7 +2571,7 @@ namespace DiffMatchPatch
             {
                 return patches;
             }
-            string[] text = textline.Split('\n');
+            string[] text = textline.Split(new[] {"\n", "\r\n"}, StringSplitOptions.None);
             int textPointer = 0;
             Patch patch;
             Regex patchHeader
